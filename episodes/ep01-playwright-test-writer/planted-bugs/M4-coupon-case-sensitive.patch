@@ -1,0 +1,15 @@
+M4: Coupon codes are case-sensitive
+Apply from tinyshop/:   patch -p1 < ../planted-bugs/M4-coupon-case-sensitive.patch
+Undo:                   patch -R -p1 < ../planted-bugs/M4-coupon-case-sensitive.patch
+
+--- a/site/app.js
++++ b/site/app.js
+@@ -45,7 +45,7 @@
+ 
+ document.getElementById('coupon-form').addEventListener('submit', (e) => {
+   e.preventDefault();
+-  const code = document.getElementById('coupon').value.trim().toUpperCase();
++  const code = document.getElementById('coupon').value.trim();
+   const msg = document.getElementById('coupon-msg');
+   if (COUPONS[code]) {
+     coupon = COUPONS[code];

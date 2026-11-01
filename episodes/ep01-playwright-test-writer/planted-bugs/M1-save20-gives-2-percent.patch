@@ -1,0 +1,15 @@
+M1: SAVE20 gives 2% instead of 20%
+Apply from tinyshop/:   patch -p1 < ../planted-bugs/M1-save20-gives-2-percent.patch
+Undo:                   patch -R -p1 < ../planted-bugs/M1-save20-gives-2-percent.patch
+
+--- a/site/app.js
++++ b/site/app.js
+@@ -4,7 +4,7 @@
+ const FREE_SHIPPING_FROM = 30; // subtotal after discount, inclusive
+ const MAX_QTY = 10;
+ const COUPONS = {
+-  SAVE20: { type: 'percent', value: 0.2 },
++  SAVE20: { type: 'percent', value: 0.02 },
+   FREESHIP: { type: 'shipping' },
+ };
+ let coupon = null;

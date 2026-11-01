@@ -1,0 +1,15 @@
+M3: Quantity 11 is accepted
+Apply from tinyshop/:   patch -p1 < ../planted-bugs/M3-quantity-11-accepted.patch
+Undo:                   patch -R -p1 < ../planted-bugs/M3-quantity-11-accepted.patch
+
+--- a/site/app.js
++++ b/site/app.js
+@@ -19,7 +19,7 @@
+ function render() {
+   const qb = readQty('qty-beans'), qm = readQty('qty-mug');
+   const err = document.getElementById('qty-error');
+-  const bad = [qb, qm].some((q) => !(q >= 1 && q <= MAX_QTY));
++  const bad = [qb, qm].some((q) => !(q >= 1 && q <= MAX_QTY + 1));
+   if (bad) {
+     err.textContent = 'Quantity must be between 1 and ' + MAX_QTY;
+     err.hidden = false;

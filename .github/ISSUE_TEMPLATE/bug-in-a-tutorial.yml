@@ -1,0 +1,35 @@
+name: Bug in a tutorial
+description: A step, command or file in an episode doesn't work as shown
+title: "[EPxx step N] "
+labels: ["tutorial bug"]
+body:
+  - type: input
+    id: episode
+    attributes:
+      label: Episode and step
+      placeholder: "EP01, Step 9"
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command you ran
+      render: bash
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: What happened (full error or output)
+      description: Please remove any tokens, keys or personal paths before pasting.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: env
+    attributes:
+      label: Your setup
+      description: OS, and the output of `node -v`, `claude --version`, `codex --version`
+      render: text
+    validations:
+      required: true

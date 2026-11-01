@@ -1,0 +1,15 @@
+M2: Free shipping only above €30, not at €30 (equivalent: no cart can total exactly €30.00)
+Apply from tinyshop/:   patch -p1 < ../planted-bugs/M2-free-shipping-only-above-30.patch
+Undo:                   patch -R -p1 < ../planted-bugs/M2-free-shipping-only-above-30.patch
+
+--- a/site/app.js
++++ b/site/app.js
+@@ -32,7 +32,7 @@
+   const isPercent = coupon && coupon.type === 'percent';
+   const discount = isPercent ? subtotal * coupon.value : 0;
+   const afterDiscount = subtotal - discount;
+-  let shipping = afterDiscount >= FREE_SHIPPING_FROM ? 0 : SHIPPING_FEE;
++  let shipping = afterDiscount > FREE_SHIPPING_FROM ? 0 : SHIPPING_FEE;
+   if (coupon && coupon.type === 'shipping') shipping = 0;
+   const total = Math.round((afterDiscount + shipping) * 100) / 100;
+   const set = (t, v) =>

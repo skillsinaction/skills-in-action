@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Tiny Shop – Checkout</title>
+<link rel="stylesheet" href="style.css"></head>
+<body>
+<main>
+  <h1>Checkout</h1>
+  <table aria-label="Cart">
+    <thead><tr><th>Item</th><th>Price</th><th>Qty</th></tr></thead>
+    <tbody>
+      <tr><td>Coffee beans</td><td>€12.50</td>
+        <td><label for="qty-beans" class="sr">Coffee beans quantity</label>
+        <input id="qty-beans" type="number" value="1" min="1" max="10"></td></tr>
+      <tr><td>Mug</td><td>€8.00</td>
+        <td><label for="qty-mug" class="sr">Mug quantity</label>
+        <input id="qty-mug" type="number" value="1" min="1" max="10"></td></tr>
+    </tbody>
+  </table>
+  <p id="qty-error" role="alert" hidden></p>
+  <form id="coupon-form">
+    <label for="coupon">Coupon code</label>
+    <input id="coupon" name="coupon" autocomplete="off">
+    <button type="submit">Apply</button>
+  </form>
+  <p id="coupon-msg" role="status"></p>
+  <dl aria-label="Summary">
+    <dt>Subtotal</dt><dd data-testid="subtotal"></dd>
+    <dt>Discount</dt><dd data-testid="discount"></dd>
+    <dt>Shipping</dt><dd data-testid="shipping"></dd>
+    <dt>Total</dt><dd data-testid="total"></dd>
+  </dl>
+</main>
+<script src="app.js"></script>
+</body></html>
+

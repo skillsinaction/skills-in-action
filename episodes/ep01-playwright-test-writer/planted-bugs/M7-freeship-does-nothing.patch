@@ -1,0 +1,15 @@
+M7: FREESHIP does nothing
+Apply from tinyshop/:   patch -p1 < ../planted-bugs/M7-freeship-does-nothing.patch
+Undo:                   patch -R -p1 < ../planted-bugs/M7-freeship-does-nothing.patch
+
+--- a/site/app.js
++++ b/site/app.js
+@@ -33,7 +33,7 @@
+   const discount = isPercent ? subtotal * coupon.value : 0;
+   const afterDiscount = subtotal - discount;
+   let shipping = afterDiscount >= FREE_SHIPPING_FROM ? 0 : SHIPPING_FEE;
+-  if (coupon && coupon.type === 'shipping') shipping = 0;
++  
+   const total = Math.round((afterDiscount + shipping) * 100) / 100;
+   const set = (t, v) =>
+     (document.querySelector(`[data-testid="${t}"]`).textContent = v);

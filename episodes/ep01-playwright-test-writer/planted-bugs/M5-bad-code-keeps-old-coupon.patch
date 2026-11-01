@@ -1,0 +1,14 @@
+M5: An unknown code keeps the previous coupon
+Apply from tinyshop/:   patch -p1 < ../planted-bugs/M5-bad-code-keeps-old-coupon.patch
+Undo:                   patch -R -p1 < ../planted-bugs/M5-bad-code-keeps-old-coupon.patch
+
+--- a/site/app.js
++++ b/site/app.js
+@@ -52,7 +52,6 @@
+     msg.textContent = `Coupon ${code} applied`;
+     msg.className = 'ok';
+   } else {
+-    coupon = null;
+     msg.textContent = 'Coupon not recognised';
+     msg.className = '';
+   }

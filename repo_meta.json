@@ -1,0 +1,24 @@
+{
+  "name": "skills-in-action",
+  "owner": "skillsinaction",
+  "visibility": "public",
+  "description": "Skills in Action: AI in Action. Hands-on tutorials for agent skills in Claude Code and Codex, plus Databricks, data and security. Every episode: a working SKILL.md, the demo code, a step-by-step guide and honest results. Independent; not affiliated with Anthropic or OpenAI.",
+  "homepage": "https://www.youtube.com/@SkillsInAction1",
+  "topics": [
+    "claude-code",
+    "codex",
+    "agent-skills",
+    "ai-agents",
+    "skill-md",
+    "coding-agents",
+    "playwright",
+    "e2e-testing",
+    "test-automation",
+    "databricks",
+    "data-analysis",
+    "ai-security",
+    "agentic-sdlc",
+    "tutorials",
+    "youtube"
+  ]
+}

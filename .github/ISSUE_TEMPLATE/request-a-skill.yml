@@ -1,0 +1,39 @@
+name: Request a skill
+description: Suggest a skill or a tutorial you'd like to see
+title: "[Skill request] "
+labels: ["skill request"]
+body:
+  - type: textarea
+    id: job
+    attributes:
+      label: What job should the skill do?
+      description: The task you keep explaining to your agent, in your own words.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Testing
+        - Code review
+        - Data / Databricks
+        - Security
+        - Docs
+        - Release
+        - Other
+    validations:
+      required: true
+  - type: checkboxes
+    id: agents
+    attributes:
+      label: Which agent(s) do you use?
+      options:
+        - label: Claude Code
+        - label: Codex
+        - label: Other
+  - type: textarea
+    id: example
+    attributes:
+      label: Example
+      description: A request you'd type, and what a good result looks like.

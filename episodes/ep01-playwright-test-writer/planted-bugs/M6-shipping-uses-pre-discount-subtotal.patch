@@ -1,0 +1,15 @@
+M6: Free-shipping threshold uses the pre-discount subtotal
+Apply from tinyshop/:   patch -p1 < ../planted-bugs/M6-shipping-uses-pre-discount-subtotal.patch
+Undo:                   patch -R -p1 < ../planted-bugs/M6-shipping-uses-pre-discount-subtotal.patch
+
+--- a/site/app.js
++++ b/site/app.js
+@@ -32,7 +32,7 @@
+   const isPercent = coupon && coupon.type === 'percent';
+   const discount = isPercent ? subtotal * coupon.value : 0;
+   const afterDiscount = subtotal - discount;
+-  let shipping = afterDiscount >= FREE_SHIPPING_FROM ? 0 : SHIPPING_FEE;
++  let shipping = subtotal >= FREE_SHIPPING_FROM ? 0 : SHIPPING_FEE;
+   if (coupon && coupon.type === 'shipping') shipping = 0;
+   const total = Math.round((afterDiscount + shipping) * 100) / 100;
+   const set = (t, v) =>
