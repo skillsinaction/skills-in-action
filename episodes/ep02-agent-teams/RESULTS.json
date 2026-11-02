@@ -1,0 +1,41 @@
+{
+ "rows": [
+  {
+   "tool": "Claude Code",
+   "label": "Claude Code \u00b7 solo",
+   "found_avg": 6.0,
+   "found_txt": "6/6 in 5 of 5 runs",
+   "findings_txt": "14.8",
+   "time_txt": "37 s",
+   "cost_txt": "$0.16 \u00b7 102k tok"
+  },
+  {
+   "tool": "Claude Code",
+   "label": "Claude Code \u00b7 team",
+   "found_avg": 6.0,
+   "found_txt": "6/6 in 5 of 5 runs",
+   "findings_txt": "19.6",
+   "time_txt": "60 s",
+   "cost_txt": "$0.39 \u00b7 237k tok"
+  },
+  {
+   "tool": "Codex",
+   "label": "Codex \u00b7 solo",
+   "found_avg": 5.8,
+   "found_txt": "6/6 in 4 of 5 runs",
+   "findings_txt": "8.8",
+   "time_txt": "13 s",
+   "cost_txt": "59k tokens"
+  },
+  {
+   "tool": "Codex",
+   "label": "Codex \u00b7 team",
+   "found_avg": 6.0,
+   "found_txt": "6/6 in 5 of 5 runs",
+   "findings_txt": "8.2",
+   "time_txt": "22 s",
+   "cost_txt": "337k tokens"
+  }
+ ],
+ "foot": "Averages over 5 runs each, recorded 1 Nov 2026 (Claude Code 2.1.316, codex-cli 0.166.0). Earlier batch of 5: Codex solo missed the blocking read 5/5; the other three setups found 6/6 every run."
+}

@@ -1,0 +1,26 @@
+{
+ "S1 path traversal (files.js)": {
+  "file": "files\\.js",
+  "match": "travers|\\.\\./|path\\.join|outside|arbitrary file"
+ },
+ "S2 auth bypass (auth.js)": {
+  "file": "auth\\.js",
+  "match": "startsWith|empty|prefix|bypass|missing.{0,20}key|no key|partial"
+ },
+ "B1 pagination off-by-one (orders.js)": {
+  "file": "orders\\.js",
+  "match": "off.by.one|page ?\\* ?pageSize|skip|first (20|page)|page 1|pages start"
+ },
+ "B2 unknown order crashes /discount (server.js)": {
+  "file": "server\\.js",
+  "match": "(findOrder|not found|undefined|null|unknown|missing|nonexistent|non-existent).{0,80}(crash|throw|TypeError|500|exception|check)|(crash|throw|TypeError).{0,80}(order|findOrder|id)"
+ },
+ "P1 quadratic report loop (report.js)": {
+  "file": "report\\.js",
+  "match": "filter|nested|quadratic|O\\(|per customer|group|n ?[x\u00d7*] ?m|scan"
+ },
+ "P2 readFileSync per request (server.js)": {
+  "file": "server\\.js",
+  "match": "readFileSync|synchronous|sync(hronous)? (file|read|I/O)|blocking"
+ }
+}

@@ -1,0 +1,51 @@
+{
+ "type": "object",
+ "additionalProperties": false,
+ "required": [
+  "findings"
+ ],
+ "properties": {
+  "findings": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "file",
+     "line",
+     "category",
+     "severity",
+     "title"
+    ],
+    "properties": {
+     "file": {
+      "type": "string"
+     },
+     "line": {
+      "type": "integer"
+     },
+     "category": {
+      "type": "string",
+      "enum": [
+       "security",
+       "bug",
+       "performance",
+       "tests"
+      ]
+     },
+     "severity": {
+      "type": "string",
+      "enum": [
+       "high",
+       "medium",
+       "low"
+      ]
+     },
+     "title": {
+      "type": "string"
+     }
+    }
+   }
+  }
+ }
+}

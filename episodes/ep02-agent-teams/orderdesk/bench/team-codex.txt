@@ -1,0 +1,1 @@
+Review this repo with three subagents in parallel: security_reviewer, bug_hunter and perf_reviewer. Wait for all three, then merge their findings into one list with file:line, sorted by severity. Don't edit any files.

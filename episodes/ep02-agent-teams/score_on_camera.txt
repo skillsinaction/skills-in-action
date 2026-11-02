@@ -1,0 +1,26 @@
+Waiting for background work to finish (subagent "Security review of repo", subagent "Bug hunt in
+ repo", subagent "Performance review of repo"). Press Ctrl+C to exit now.                       
+claude-team run 3: 64.2s                                                                        
+codex-solo run 3: 13.0s                                                                         
+codex-team run 3: 20.9s                                                                         
+claude-solo run 4: 46.0s                                                                        
+                                                                                                
+Waiting for background work to finish (subagent "Security review of repo", subagent "Bug hunt in
+ repo", subagent "Perf review of repo"). Press Ctrl+C to exit now.                              
+claude-team run 4: 55.5s                                                                        
+codex-solo run 4: 12.6s                                                                         
+codex-team run 4: 20.5s                                                                         
+claude-solo run 5: 42.7s                                                                        
+                                                                                                
+Waiting for background work to finish (subagent "Security review of repo", subagent "Bug hunt in
+ repo", subagent "Performance review of repo"). Press Ctrl+C to exit now.                       
+claude-team run 5: 60.9s                                                                        
+codex-solo run 5: 12.6s                                                                         
+codex-team run 5: 20.0s                                                                         
+dev ~/orderdesk $ node bench/score.mjs                                                          
+setup        runs  planted found   findings  time   cost      tokens                            
+claude-solo  5     6.0/6 (5/5 all)   14.8      37s    $0.16     102k                            
+claude-team  5     6.0/6 (5/5 all)   19.6      60s    $0.39     237k                            
+codex-solo   5     5.8/6 (4/5 all)   8.8       13s    -         59k                             
+codex-team   5     6.0/6 (5/5 all)   8.2       22s    -         337k                            
+dev ~/orderdesk $                                                                               

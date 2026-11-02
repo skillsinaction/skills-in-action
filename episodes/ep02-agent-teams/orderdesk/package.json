@@ -1,0 +1,7 @@
+{
+  "name": "orderdesk",
+  "version": "1.0.0",
+  "description": "Tiny order API for a local shop",
+  "type": "module",
+  "scripts": { "start": "node src/server.js", "test": "node --test" }
+}
